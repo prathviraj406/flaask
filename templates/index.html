@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Matching</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Candidate Matching</h1>
+    <form action="/recommend" method="post">
+        <label for="title">Search Title:</label>
+        <select name="title" id="title">
+            {% for job_title in job_titles %}
+            <option value="{{ job_title }}">{{ job_title }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if jobs %}
+    <h2>Current Job Openings:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Id</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Apply Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job['Job Id'] }}</td>
+                <td>{{ job['job title'] }}</td>
+                <td>{{ job['company'] }}</td>
+                <td><a href="{{ job['Apply Link'] }}" target="_blank">Apply</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
