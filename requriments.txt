@@ -55,7 +55,7 @@ dnspython==2.6.1
 dominate==2.9.1
 easyocr==1.7.1
 email_validator==2.2.0
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl#sha256=86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889
+
 eventlet==0.36.1
 executing==2.0.1
 fastjsonschema==2.19.1
@@ -288,7 +288,7 @@ tensorflow-hub==0.16.1
 tensorflow-intel==2.16.0rc0
 termcolor==2.4.0
 tf_keras==2.16.0
-tflearn @ git+https://github.com/MihaMarkic/tflearn.git@6472b8588e758ff4a33a2764d4ee638bbd0e42f0
+tflearn 
 thinc==8.2.3
 thop==0.1.1.post2209072238
 threadpoolctl==3.2.0
